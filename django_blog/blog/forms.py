@@ -1,5 +1,6 @@
 from django import forms
-from .models import Blog
+from .models import Blog, Comment
+
 
 banned_email_list = ['ahmet@gmail.com', 'deneme@carpedu.com', 'teoman@carpedu.com']
 
@@ -43,7 +44,7 @@ class IletisimForm(forms.Form):
 class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
-        fields = ['title', 'icerik']
+        fields = ['title', 'image', 'icerik', 'yayin_taslak', 'kategoriler']
 
     def __init__(self, *args, **kwargs):
         super(BlogForm, self).__init__(*args, **kwargs)
@@ -51,3 +52,26 @@ class BlogForm(forms.ModelForm):
             self.fields[field].widget.attrs = {'class': 'form-control'}
         self.fields['icerik'].widget.attrs['rows'] = 10
 
+    def clean_icerik(self):
+        icerik = self.cleaned_data.get('icerik')
+        if len(icerik) < 250:
+            msg = 'Lütfen en az 250 karakter giriniz. Girilen karakter sayısı: %s' % len(icerik)
+            raise forms.ValidationError(msg)
+        return icerik
+
+class PostSorguForm(forms.Form):
+    YAYIN_TASLAK = (('all', 'HEPSİ'), ('yayin', 'YAYIN'), ('taslak', 'TASLAK'))
+
+    search = forms.CharField(required=False, max_length=500, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Aranacak kelimeyi giriniz'}))
+    taslak_yayin = forms.ChoiceField(label='', widget=forms.Select(attrs={'class': 'form-control'}), choices=Blog.YAYIN_TASLAK, required=True)
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields=['icerik']
+
+    def __init__(self, *args, **kwargs):
+        super(CommentForm, self).__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs = {'class': 'form-control'}

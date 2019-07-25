@@ -1,3 +1,27 @@
+
+.pull-center{
+    float: none;
+    margin: 0 auto;
+}
+
+
+.user-profile-img{
+    width: 150px;
+}
+
+.user-profile{
+    margin-top: 25px;
+}
+
+.glyphicon-star {
+    color: #CCCCCC;
+    font-size: 16px;
+}
+
+.glyphicon-star.active {
+    color: #FDB230;
+}
+
 body {
-    background-color: #fffccf;
+    background: white url("img/72166657-carrara-marble-marble-texture-white-stone-background-bianco-venatino-marble-quality-stone-texture-hi.jpg");
 }

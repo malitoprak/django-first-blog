@@ -17,14 +17,20 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
-from blog.views import iletisim
+from blog.views import iletisim, deneme, deneme_ajax, deneme_ajax2
 
 
 urlpatterns = [
+    re_path(r'^deneme/$', deneme, name='deneme'),
+    re_path(r'^deneme/ajax$', deneme_ajax, name='deneme-ajax'),
+    re_path(r'^deneme/ajax-2$', deneme_ajax2, name='deneme-ajax2'),
     path('admin/', admin.site.urls),
     re_path(r'^posts/', include('blog.urls')),
+    re_path(r'^auths/', include('auths.urls')),
+    re_path(r'^following/', include('following.urls')),
     re_path(r'^iletisim/', iletisim, name='iletisim'),
 ]
 
 
-urlpatterns += static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

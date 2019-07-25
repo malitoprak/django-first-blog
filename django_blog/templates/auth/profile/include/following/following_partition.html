@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="takipciler follow_button col-lg-offset-3 col-lg-3 text-center col-md-3 col-md-offset-3">
+    <span><b>Takipçiler</b></span>
+    <button url="{% url 'followed-or-followers-list' 'followers' %}" follow_type="followers"
+            username="{{ user.username }}"
+            class="follow_button btn btn-primary btn-block">{{ takipciler }}</button>
+</div>
+<div class="takip_edilenler col-lg-3 text-center col-md-3">
+    <span><b>Takip Edilenler</b></span>
+    <button url="{% url 'followed-or-followers-list' 'followed' %}" follow_type="followed"
+            username="{{ user.username }}"
+            class="btn follow_button btn-success btn-block">{{ takip_edilenler }}</button>
+</div>

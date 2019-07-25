@@ -4,40 +4,20 @@
     Post Create
 {% endblock %}
 
+
+{% block ust_icerik %}
+    {{ form.media }}
+{% endblock %}
+
+
 {% block icerik %}
 
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
             <h1 class="page-header">Post Create</h1>
-            <form action="{% url 'post-create' %}" method="post">
+            <form action="{% url 'post-create' %}" enctype="multipart/form-data" method="post">
                 {% csrf_token %}
-                {% for field in form %}
-
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                {#                        <label class="control-label" for="{{ field.id_for_label }}">#}
-                                <label class="control-label">
-                                    {#                            {{ field.id_for_label }}#}
-                                    {{ field.label }}
-                                </label>
-                                {{ field }}
-
-                                {% if field.help_text %}
-                                    <span class="text-success">
-                               <b>
-                               {{ field.help_text }}
-                                   </b>
-                               </span>
-                                {% endif %}
-
-                            </div>
-                            {#                    <div class="col-lg-6">#}
-                            {#                        #}
-                            {#                    </div>#}
-                        </div>
-                    </div>
-                {% endfor %}
+{% include 'blog/include/form-include.html' %}
                 <div class="form-group">
                     <div class="row">
                         <div class="col-lg-12">

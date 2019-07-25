@@ -13,36 +13,80 @@
 {% block icerik %}
     {#    {{ block.super }}#}
     {#    <div style="margin:0 auto;width: 500px">#}
-
-    <div class="row" xmlns="http://www.w3.org/1999/html">
+    {#{{ request.user }}#}
+    <div class="row">
         <div class="col-lg-12">
             <div class="col-lg-8 col-lg-offset-2">
-                <h1 class="page-header">
-                    <span>POST LIST</span>
-                <small class="pull-right">
-                    <a href="{% url 'post-create' %}">Post Create</a>
-                </small>
-                </h1>
 
+                {#                <div class="row">#}
+                {#                    <div class="col-lg-12">#}
+                {#                        <h1 class="page-header"><span>POST LIST</span>#}
+                {#                            <small class="pull-right">#}
+                {#                                <a href="{% url 'post-create' %}">Post Create</a>#}
+                {#                            </small>#}
+                {#                        </h1>#}
+                {#                    </div>#}
+                {#                </div>#}
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="row">
+                                <form class="form-inline" action="{% url 'post-list' %}">
+                                    {% for field in form %}
+                                        <div class="form-group">
+                                            {{ field }}
+                                            {% for error in field.errors %}
+                                                <span class="text-danger"><b> {{ error }}</b></span>
+                                            {% endfor %}
+                                        </div>
+                                    {% endfor %}
+                                    <input type="submit" class="btn btn-success" value="Sorgula">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {% for post in posts %}
                     <h2>
                         <p>
-                            <a href="{% url 'post-detail' post.pk %}">
-                                {{ post.title }},
-                            </a>
-                            <small>
-                                {{ post.created_date }}
-                            </small>
-                            <small>{% url 'post-detail' post.pk %}</small>
+                            {#                            <a href="{% url 'post-detail' post.pk %}">#}
+                            <a href="{{ post.get_absolute_url }}"><span>{{ post.title }} </span></a>
+                            <small style="font-size: small">{{ post.get_yayin_taslak_html }}
+                                <a href="{% url 'add-remove-favorite' post.slug %}?next={% url 'post-list' %}"
+                                   class="btn btn-sm btn-default">
+                                    <span class="glyphicon glyphicon-star {% if request.user.username in post.get_added_favorite_user %}active{% endif %}"></span>
+                                </a>
+                                <span class="glyphicon glyphicon-time">{{ post.created_date }}</span></small>
+                            <small>{% url 'post-detail' post.slug %}</small>
                         </p>
                     </h2>
-                    <p>
-                        <b>
-                            CONTENT =
+                    {% if post.get_image %}<img class="img-responsive" src="{{ post.get_image }}">{% endif %}
+                    <span class="glyphicon glyphicon-user">
+                        <b>Yazar:
+                            <a href="{% url 'user-profile' post.user.username %}">
+                                {{ post.user.username }}
+                            </a>
                         </b>
-                        {{ post.icerik }}
+                        <span title="Yorum sayısı" class="glyphicon glyphicon-comment">
+                            <b>
+                                {{ post.get_comment_count }}
+                            </b>
+                        </span>
+                         <span title="Favorilere eklenme sayısı" class="glyphicon glyphicon-star active">
+                             <b>
+                                 {{ post.get_favorite_count }}
+                             </b>
+                         </span>
+                    </span>
+
+                    <p class="lead" style="font-size: large; margin-top: 20px">
+                        {{ post.icerik|safe |truncatechars:100 }}
+                        {#                    {{ post.icerik|safe |truncatewords:100 }}#}
                     </p>
+                    {#                    {{ post.slug }}#}
+
                     {#                    <p><b>CREATED DATE = </b>{{ post.created_date }}</p>#}
+
                     <br>
                 {% empty %}
                     <p>Aradığınız kriterde bir blog bulunamadı.</p>
@@ -55,6 +99,56 @@
                 {#        {% else %}#}
                 {#            <p>Teoman</p>#}
                 {#        {% endif %}#}
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        {% if posts.has_other_pages %}
+                            <ul class="pagination">
+                                {% if posts.has_previous %}
+                                    <li><a href="?page=
+
+
+
+
+
+                                            {{ posts.previous_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}{% if request.GET.taslak_yayin %}&taslak_yayin={{ request.GET.taslak_yayin }}{% endif %}">&laquo;</a>
+                                    </li>
+                                {% else %}
+                                    <li class="disabled"><span>&laquo;</span></li>
+                                {% endif %}
+                                {% for i in posts.paginator.page_range %}
+                                    {% if posts.number == i %}
+                                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span> </span>
+                                        </li>
+                                    {% else %}
+                                        <li><a href="?page=
+
+
+
+
+
+                                                {{ i }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}{% if request.GET.taslak_yayin %}&taslak_yayin={{ request.GET.taslak_yayin }}{% endif %}">{{ i }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if posts.has_next %}
+                                    <li><a href="?page=
+
+
+
+
+
+                                            {{ posts.next_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}{% if request.GET.taslak_yayin %}&taslak_yayin={{ request.GET.taslak_yayin }}{% endif %}">&raquo;</a>
+                                    </li>
+                                {% else %}
+                                    <li class="disabled"><span>&raquo;</span></li>
+                                {% endif %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -4,9 +4,81 @@
     {{ user.profile.get_screen_name }}
 {% endblock %}
 
+{% block ust_icerik %}
+    <script type="text/javascript" rel="script">
+        $(document).ready(function () {
+
+            $("#user_following").on('click', '.follow_button', function () {
+                var $this = $(this);
+                var $follow_type = $this.attr('follow_type');
+                var $modal = $("#profile_following_modal");
+                var $url = $this.attr('url');
+                var $username = $this.attr('username');
+
+                //$modal.modal('show');
+                if ($follow_type === "followed") {
+                    $modal.find('.modal-title').html("Takip Edilenler");
+                } else if ($follow_type === "followers") {
+                    $modal.find('.modal-title').html("Takipçiler");
+                }
+
+                $.ajax({
+                    url: $url,
+                    method: 'GET',
+                    dataType: 'json',
+                    data: {'username': $username},
+                    success: function (data) {
+                        $modal.find('.modal-body').html(data.html);
+                        $modal.modal('show');
+                    }
+                })
+
+
+            });
+
+            $("#takip_et_cikar_buton").click(function () {
+                var $this = $(this);
+                var $url = $this.attr('url');
+                var $takip_eden = $this.attr('takip_eden');
+                var $takip_edilen = $this.attr('takip_edilen');
+
+                var data = {follower_username: $takip_eden, followed_username: $takip_edilen};
+                $.ajax({
+                    url: $url,
+                    type: 'GET',
+                    dataType: 'json',
+                    data: data,
+                    success: function (data) {
+                        if (data.is_valid) {
+                            $this.html(data.msg);
+                            $("#user_following").html(data.html)
+                        }
+
+                    }
+                })
+            })
+        })
+
+    </script>
+{% endblock %}
+
 {% block icerik %}
     <div class="row">
         <div class="col-lg-8 user-profile pull-center">
+            {% include 'following/profile/include/following_modal.html' %}
+            {% if request.user != user %}
+                <div>
+                    <button takip_edilen="{{ user.username }}" takip_eden="{{ request.user.username }}"
+                            url="{% url 'kullanici-takip-et-cikar' %}" class="btn btn-success btn-md"
+                            id="takip_et_cikar_buton">
+                        {% if takip_ediyor_mu %}
+                            <b>Takipten çıkar</b>
+                        {% else %}
+                            <b>Takip et</b>
+                        {% endif %}
+                    </button>
+                </div>
+            {% endif %}
             <div class="text-center">
                 <img class="user-profile-img img-circle" src="{{ user.userprofile.get_profile_photo }}">
             </div>
@@ -20,11 +92,16 @@
                 <span class="text"><b>@{{ user.username }}</b></span>
                 <span class="text"><b>{{ user.userprofile.get_sex_display }}</b></span>
             </div>
-        {% if request.user == user %}
-            {% include 'auth/profile/include/owner_navbar.html' %}
-        {% else %}
-            {% include 'auth/profile/include/visitor_navbar.html' %}
-        {% endif %}
+            <br>
+            <div id="user_following" class="row">
+                {% include 'auth/profile/include/following/following_partition.html' %}
+            </div>
+            <br>
+            {% if request.user == user %}
+                {% include 'auth/profile/include/owner_navbar.html' %}
+            {% else %}
+                {% include 'auth/profile/include/visitor_navbar.html' %}
+            {% endif %}
             <div>
                 {% block profil_icerik %}
 

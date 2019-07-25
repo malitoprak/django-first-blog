@@ -1,10 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    DENEME
+{% endblock %}
+
+
+
+{% block ust_icerik %}
+    <script type="text/javascript" rel="script">
+        $(document).ready(function () {
+            
+            $('#ogrenci_getir').click(function () {
+                $.ajax({
+                    url:"{% url 'deneme-ajax2' %}",
+                    type:'GET',
+                    dataType:'json',
+                    data:{},
+                    success:function (data) {
+                        $("#gelen_mesaj").html(data.html)
+                    }
+                })
+            })
+
+            $('#ajax_deneme_form').submit(function (e) {
+                e.preventDefault();
+                var $this = $(this);
+                var type = $this.attr('method');
+                var action = $this.attr('action');
+                var data = $this.serialize();
+
+                $.ajax({
+                    url: action,
+                    type: type,
+                    data: data,
+                    success: function (data) {
+                        alert(data.msg)
+                    }
+                })
+                console.log(data);
+                console.log(action);
+                console.log(type);
+            });
+
+
+            $('#2selam2').click(function () {
+                var $this = $(this);
+                var url = $this.attr('url');
+                $.ajax({
+                    url: url,
+                    method: 'POST',
+                    dataType: 'json',
+                    data: {'csrfmiddlewaretoken': '{{ csrf_token }}'},
+                    success: function (data) {
+                        $this.html(data.msg)
+                    }
+                })
+            });
+
+
+            {#console.log("selam")#}
+            {#$('button[name="selam"]').click(function () {#}
+            {#$('.btn').click(function () { {# class ile çağırma #}
+            {#$('button[id="selam"]').click(function () {#}
+            $('#selam').click(function () {            {# id ile çağırma #}
+                {#var url = "{% url 'deneme' %}"#}
+                var $this = $(this);
+                var adres = $(this).attr('url');
+                $.ajax({
+                    url: adres,
+                    type: "GET",
+                    dataType: 'json',
+                    success: function (data) {
+                        {#console.log(data)#}
+                        $this.html(data.msg)
+                    }
+                })
+                //              var $this = $(this);
+                //              $this.html('Merhaba');
+                //            $this.append('<b> Toprak</b>');
+                //          $this.prepend('Lan ');
+            });
+
+            $('button[name="merhaba').click(function () {
+                $(this).html("İyiyim sen nasılsın.");
+            });
+
+            $('a').click(function (e) {
+                e.preventDefault();     //kendi işini yapma benim işimi yap
+                var $this = $(this);
+                // var username = $this.attr('username','deneme'); //attr değiştirmece
+
+                var href = $this.attr('href');
+            })
+
+
+        })
+    </script>
+{% endblock %}
+
+
+
+{% block icerik %}
+
+    <div class="row">
+
+        <div class="col-lg-1 pull-center">
+            <button id="selam" url="{% url 'deneme' %}" name="selam" class="btn btn-success">Selam</button>
+            <button id="merhaba" name="merhaba" class="btn btn-danger">Merhaba</button>
+            <a href="{% url 'post-list' %}" username="toprak" class="btn btn-primary">Tıklayın</a>
+            <br>
+            <button id="2selam2" url="{% url 'deneme-ajax' %}" name="selam2" class="btn btn-success">Selam2</button>
+
+            <form action="{% url 'deneme-ajax' %}" method="post" id="ajax_deneme_form">
+                {% csrf_token %}
+                <input type="hidden" value="teoman" name="isim">
+                <button type="submit" class="btn btn-success">Ajax isteği gönder</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-lg-6 pull-center">
+        <h1>Render To String kullanım</h1>
+        <button id="ogrenci_getir" class="btn btn-success">Öğrenci Getir</button>
+        <div id="gelen_mesaj">
+            
+        </div>
+    </div>
+    </div>
+{% endblock %}

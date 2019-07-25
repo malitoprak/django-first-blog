@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base_is_anonymous.html' %}
+{% load static %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block icerik %}
+
+    <div class="row">
+        <div class="col-lg-5 pull-center">
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    <div class="alert alert-dismissible alert alert-danger">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        {{ error|safe }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <form style="margin-top: 50px" action="{% url 'user_login' %}" method="post"> {% csrf_token %}
+                {% for field in form %}
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                {#                        <label class="control-label" for="{{ field.id_for_label }}">#}
+                                <label class="control-label">
+                                    {#                            {{ field.id_for_label }}#}
+                                    {{ field.label }}
+                                </label>
+                                {{ field }}
+                                {% if field.errors %}
+                                    {% for error in field.errors %}
+                                        <span class="text-danger"><b>{{ error }}</b></span>
+                                    {% endfor %}
+                                {% else %}
+                                    {% if field.help_text %}
+                                        <span class="text-success"><b>{{ field.help_text }}</b></span>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                            {#                    <div class="col-lg-6">#}
+                            {#                        #}
+                            {#                    </div>#}
+                        </div>
+                    </div>
+                {% endfor %}
+                <input type="submit" class="btn-success btn btn-sm" value="Giriş yap">
+                <span><b>veya hesabınız yoksa üye olmak için<a href="{% url 'register' %}"> tıklayınız.</a> </b></span>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
