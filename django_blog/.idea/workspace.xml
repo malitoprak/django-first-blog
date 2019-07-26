@@ -2,55 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5930149a-01f1-45d8-94fe-da612ac8b70a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auths/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auths/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/decorators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/following/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/following/templatetags/following_system.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/following/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/default/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bootstrap-datetime/bootstrap-datetime.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bootstrap-datetime/bootstrap-datetime.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/10537888-natural-stone-texture-with-different-colors.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/72166657-carrara-marble-marble-texture-white-stone-background-bianco-venatino-marble-quality-stone-texture-hi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/auth/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/auth/profile/about_me.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/auth/profile/include/both_navbar_fields.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/auth/profile/include/following/following_partition.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/auth/profile/include/owner_navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/auth/profile/include/visitor_navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/auth/profile/password_change.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/auth/profile/settings.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/auth/profile/user_profile_base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/auth/profile/userprofile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/auth/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base_is_anonymous.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/blog/include/form-include.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/deneme.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/following/profile/include/following_followed_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/following/profile/include/following_modal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/merhaba.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ogrenci_velisine_mesaj.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/mehmett.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/mehmett.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/following/profile/include/button_include/takip_birak_button.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/following/profile/include/button_include/takip_et_button.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_blog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_root/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static_root/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/post-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/post-create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/post-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/post-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/post-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/post-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myvenv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/../myvenv/pip-selfcheck.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/following/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/following/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/following/templatetags/following_system.py" beforeDir="false" afterPath="$PROJECT_DIR$/following/templatetags/following_system.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/following/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/following/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/following/profile/include/following_followed_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/following/profile/include/following_followed_list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,11 +25,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="29" column="91" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
+              <folding>
+                <element signature="e#0#108#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/auth/profile/user_profile_base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/following/templatetags/following_system.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="153">
+              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -78,8 +58,57 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/following/profile/include/following_followed_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+            <state relative-caret-position="289">
+              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/following/profile/include/button_include/takip_birak_button.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="76" selection-start-column="76" selection-end-column="76" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/following/profile/include/button_include/takip_et_button.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="64" lean-forward="true" selection-start-column="64" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/following/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/following/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,8 +120,8 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -111,6 +140,10 @@
       <find>get_profile_photo</find>
       <find>fallow</find>
       <find>follow_button</find>
+      <find>my_followed</find>
+      <find>print(</find>
+      <find>True</find>
+      <find>deneme</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -119,8 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/blog/post-update.html" />
-        <option value="$PROJECT_DIR$/templates/blog/include/form-include.html" />
         <option value="$PROJECT_DIR$/auth/forms.py" />
         <option value="$PROJECT_DIR$/auth/urls.py" />
         <option value="$PROJECT_DIR$/auth/views.py" />
@@ -162,14 +193,16 @@
         <option value="$PROJECT_DIR$/templates/auth/profile/include/following/following_partition.html" />
         <option value="$PROJECT_DIR$/following/urls.py" />
         <option value="$PROJECT_DIR$/templates/following/profile/include/following_model.html" />
-        <option value="$PROJECT_DIR$/following/models.py" />
         <option value="$PROJECT_DIR$/django_blog/urls.py" />
         <option value="$PROJECT_DIR$/templates/auth/profile/user_profile_base.html" />
-        <option value="$PROJECT_DIR$/following/views.py" />
         <option value="$PROJECT_DIR$/following/templatetags/__init__.py" />
+        <option value="$PROJECT_DIR$/django_blog/settings.py" />
+        <option value="$PROJECT_DIR$/following/views.py" />
+        <option value="$PROJECT_DIR$/following/models.py" />
         <option value="$PROJECT_DIR$/following/templatetags/following_system.py" />
         <option value="$PROJECT_DIR$/templates/following/profile/include/following_followed_list.html" />
-        <option value="$PROJECT_DIR$/django_blog/settings.py" />
+        <option value="$PROJECT_DIR$/templates/following/profile/include/button_include/takip_et_button.html" />
+        <option value="$PROJECT_DIR$/templates/following/profile/include/button_include/takip_birak_button.html" />
       </list>
     </option>
   </component>
@@ -208,6 +241,19 @@
               <item name="django_blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="django_blog" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_blog" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="django_blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="django_blog" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="django_blog" type="b2602c69:ProjectViewProjectNode" />
@@ -314,12 +360,12 @@
       <workItem from="1561622141558" duration="5054000" />
       <workItem from="1561704434304" duration="22264000" />
       <workItem from="1562065068309" duration="12843000" />
-      <workItem from="1562150893616" duration="123208000" />
+      <workItem from="1562150893616" duration="127910000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170449000" />
+    <option name="totallyTimeSpent" value="175151000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -388,20 +434,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../myvenv/Lib/site-packages/django/contrib/auth/base_user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../myvenv/Lib/site-packages/django/utils/deprecation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../myvenv/Lib/site-packages/django/core/handlers/exception.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -663,16 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="91" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
-          <folding>
-            <element signature="e#0#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/auths/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -689,16 +711,6 @@
           <caret line="139" column="39" selection-start-line="139" selection-start-column="39" selection-end-line="139" selection-end-column="39" />
           <folding>
             <element signature="e#0#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/following/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -720,13 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/auth/profile/user_profile_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/following/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -741,16 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/following/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="54" column="35" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -771,20 +766,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/following/profile/include/following_followed_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/following/templatetags/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/following/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/following/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="29" column="91" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
+          <folding>
+            <element signature="e#0#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/auth/profile/user_profile_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/following/templatetags/following_system.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="153">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/following/profile/include/following_followed_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/following/profile/include/button_include/takip_et_button.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="64" lean-forward="true" selection-start-column="64" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/following/profile/include/button_include/takip_birak_button.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="76" selection-start-column="76" selection-end-column="76" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

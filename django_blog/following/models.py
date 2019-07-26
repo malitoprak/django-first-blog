@@ -44,3 +44,8 @@ class Following(models.Model):
     @classmethod
     def get_followed(cls, user):
         return cls.objects.filter(follower=user)
+
+    @classmethod
+    def get_followed_username(cls, user):
+        followed = cls.get_followed(user)
+        return followed.values_list('followed__username', flat=True)

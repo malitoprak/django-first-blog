@@ -41,17 +41,20 @@ def followed_or_followers_list(request, follow_type):
     if not username:
         raise Http404
     user = get_object_or_404(User, username=username)
+    my_followed = Following.get_followed_username(user=request.user)
 
     if follow_type == 'followed':
         takip_edilenler = Following.get_followed(user=user)
         html = render_to_string('following/profile/include/following_followed_list.html',
-                                context={'following': takip_edilenler, 'follow_type': follow_type}, request=request)
+                                context={'my_followed': my_followed, 'following': takip_edilenler,
+                                         'follow_type': follow_type}, request=request)
         data.update({'html': html})
 
     elif follow_type == 'followers':
         takipciler = Following.get_followers(user=user)
         html = render_to_string('following/profile/include/following_followed_list.html',
-                                context={'following': takipciler, 'follow_type': follow_type}, request=request)
+                                context={'my_followed': my_followed, 'following': takipciler,
+                                         'follow_type': follow_type}, request=request)
         data.update({'html': html})
 
     else:
